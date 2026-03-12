@@ -1,0 +1,26 @@
+[33mcommit 3e6759e020be1ec3e15be1a87086018dd8a68627[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 7e1e8ab 2f8d558
+Author: VitorGalletti <163073016+VitorGalletti@users.noreply.github.com>
+Date:   Thu Mar 12 16:02:54 2026 -0300
+
+    Cria uma entidade no banco de dados apartir do NinjaModel [Aula3]
+    
+    Cria uma entidade no banco de dados apartir do NinjaModel [Aula3]
+
+[33mcommit 2f8d55871bb94811f61d14033f3b3dce46cda9ba[m[33m ([m[1;31morigin/Aula2[m[33m)[m
+Author: Vitor Galletti <vitorgalletti@hotmail.com>
+Date:   Thu Mar 12 15:33:44 2026 -0300
+
+    Cria uma entidade no banco de dados apartir do NinjaModel [Aula3]
+
+[33mcommit 7e1e8ab1f3c40d550ca227d11090037ebf088f98[m
+Author: Vitor Galletti <vitorgalletti@hotmail.com>
+Date:   Thu Mar 12 13:39:06 2026 -0300
+
+    Criado a controller [Aula2]
+
+[33mcommit 5578b626b4e5035701b4e2384cb0c3acd6ff56fe[m
+Author: Vitor Galletti <vitorgalletti@hotmail.com>
+Date:   Thu Mar 12 12:52:19 2026 -0300
+
+    first commit
