@@ -39,5 +39,6 @@ public class NinjaController {
     @DeleteMapping("/deletarID")
     public String deletarNinjaPorID() {
         return "Deletar Ninja por id";
+
     }
 }
