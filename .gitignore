@@ -32,7 +32,7 @@ build/
 ### VS Code ###
 .vscode/
 .env
-.data/
-.data/CadastroDeNinjaDb.mv.db
-
+data/
+*.mv.db
+*.trace.db
 
