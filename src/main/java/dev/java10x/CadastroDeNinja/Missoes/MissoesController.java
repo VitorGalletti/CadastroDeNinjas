@@ -20,7 +20,7 @@ public class MissoesController {
     }
 
     // PUT -- Mandar uma requisicao para alterar as missoes
-    @PutMapping("alterar")
+    @PutMapping("/alterar")
     public String  alterarMissao(){
         return "Missao alteradas com sucesso";
     }
