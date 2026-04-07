@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tabela de Ninjas</title>
+</head>
+<body>
+<h1>Lista Ninjas</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Email</th>
+            <th>Rank</th>
+            <th>Missoes</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:each ="ninja : ${ninjas}">
+
+        <td> <img th:src="${ninja.imgUrl}"> </td>
+    </tr>
+
+
+    </tbody>
+</table>
+
+</body>
+</html>
