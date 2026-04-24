@@ -1,5 +1,9 @@
 package dev.java10x.CadastroDeNinja.Ninjas;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -57,6 +61,12 @@ public class NinjaControllerUi {
         return "redirect:/ninjas/ui/listar";
     }
 
+    @PutMapping("/alterar/{id}")
+    public String alterarNinjaPorId(@PathVariable Long id, @RequestBody NinjaDTO ninjaAtualizado) {
+
+        NinjaDTO ninja = ninjaService.atualizarNinja(id, ninjaAtualizado);
+            return "lista-ninjas";
+    }
 
 
 }
