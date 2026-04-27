@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/ninjas/ui")
@@ -42,6 +43,42 @@ public class NinjaControllerUi {
             model.addAttribute("mensagem", "Ninja não encontrado");
             return "lista-ninjas";
         }
+    }
+
+
+   /* // Alterar dados dos ninjas (UPDATE)
+    @PutMapping("/alterar/{id}")
+    public String alterarNinjaPorId(@PathVariable Long id, Model model) {
+
+        NinjaDTO ninja = ninjaService.atualizarNinja(id, ninjaService.listarNinjasPorId(id));
+        if (ninja != null) {
+            model.addAttribute("ninja", ninja);
+            return "atualizar-ninja";
+        } else {
+            model.addAttribute("mensagem", "Ninja não encontrado");
+            return "lista-ninjas";
+        }
+    }
+    */
+
+    @GetMapping("/alterar/{id}")
+    public String mostrarFormulario(@PathVariable Long id, Model model) {
+        NinjaDTO ninja = ninjaService.listarNinjasPorId(id);
+        if (ninja !=null) {
+            model.addAttribute("ninja", ninja);
+            return "atualizar-ninja";
+        } else {
+            model.addAttribute("mensagem", "Ninja não encontrado");
+            return "lista-ninjas";
+        }
+
+    }
+
+    @PostMapping("/salvarAlteracoes/{id}")
+    public String salvarAlteracoes(@PathVariable Long id, @ModelAttribute NinjaDTO ninja, RedirectAttributes redirectAttributes) {
+        ninjaService.criarNinja(ninja);
+        redirectAttributes.addFlashAttribute("mensagem", "Ninja cadastrado com sucesso!");
+        return "redirect:/ninjas/ui/listar";
     }
 
     @GetMapping("/adicionar")

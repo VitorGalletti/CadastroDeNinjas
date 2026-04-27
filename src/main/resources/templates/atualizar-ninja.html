@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar Ninja</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745; /* verde */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+button:hover {
+    background-color: #218838;
+}
+
+        .mensagem {
+            color: red;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Atualizar Ninja</h1>
+
+    <div class="mensagem" th:if="${mensagem}" th:text="${mensagem}"></div>
+
+    <form th:action="@{/ninjas/ui/salvarAlteracoes/{id}(id=${ninja.id})}"
+          th:object="${ninja}"
+          method="post">
+
+        <label>Nome:</label>
+        <input type="text" th:field="*{nome}" required />
+
+        <label>Idade:</label>
+        <input type="number" th:field="*{idade}" required />
+
+        <label>Imagem (URL):</label>
+        <input type="text" th:field="*{imgUrl}" />
+
+        <button type="submit">Salvar Alterações</button>
+    </form>
+
+    <a th:href="@{/ninjas/ui/listar}">Voltar</a>
+
+</div>
+
+</body>
+</html>
